@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-g6(o_xz%4j-a3ku+vp*!mjegvqbrmx^ji$nyy19p*l%xtdti14
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['raven01.pythonanywhere.com', 'aeelite.online']
+ALLOWED_HOSTS = ['raven01.pythonanywhere.com', 'aeelite.online', 'aeelite.netlify.app']
 
 
 # Application definition
@@ -59,9 +59,7 @@ MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
 ]
 
-CORS_ALLOW_ALL_ORIGINS = [
-    'https://',
-]
+CORS_ALLOW_ALL_ORIGINS = False
 
 ROOT_URLCONF = 'AEE.urls'
 
