@@ -21,12 +21,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-g6(o_xz%4j-a3ku+vp*!mjegvqbrmx^ji$nyy19p*l%xtdti14'
+SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'unsafe-default-key-for-dev')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['raven01.pythonanywhere.com', 'aeelite.online', 'aeelite.netlify.app']
+ALLOWED_HOSTS = ['raven01.pythonanywhere.com', 'aeelite.online', 'aeelite.netlify.app', 'webapp-2661136.pythonanywhere.com', 'app.aeelite.online']
 
 
 # Application definition
@@ -57,6 +57,8 @@ MIDDLEWARE = [
 
     
     'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 CORS_ALLOW_ALL_ORIGINS = False
