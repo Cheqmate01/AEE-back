@@ -59,7 +59,10 @@ MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
 ]
 
-CORS_ALLOW_ALL_ORIGINS = False
+CORS_ALLOW_ALL_ORIGINS = [
+    "https://aeelite.online",
+    "https://www.aeelite.online",
+]
 
 ROOT_URLCONF = 'AEE.urls'
 
